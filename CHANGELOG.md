@@ -28,6 +28,7 @@ All notable, unreleased changes to this project will be documented in this file.
 - Fix crash on null price range - #875 by @orzechdev
 - Update collection products query - #879 by @orzechdev
 - Fix checkout refreshing - #865 by @orzechdev
+- Handle JWT token refreshing - #883 by @orzechdev
 
 ## 2.10.4
 
