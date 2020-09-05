@@ -198,7 +198,7 @@
     "test": "jest --runInBand --config .jest/config.json",
     "start": "cross-env NODE_ENV=develop webpack-dev-server --history-api-fallback --watch --port 3000 --mode development --hotOnly",
     "start:worker": "npm run start -- --service-worker",
-    "build": "webpack -p",
+    "build": "API_URI=https://cf.sempiternal.in/api/graphql/ webpack -p",
     "watch": "webpack -d --watch",
     "storybook": "start-storybook -p 9002",
     "codegen": "apollo codegen:generate --target=typescript gqlTypes",
