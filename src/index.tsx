@@ -12,7 +12,7 @@ import { QueryParamProvider } from "use-query-params";
 
 import { NotificationTemplate } from "@components/atoms";
 import {
-  ServiceWorkerContext,
+  // ServiceWorkerContext,
   ServiceWorkerProvider,
 } from "@components/containers";
 import { SaleorProvider, useAuth } from "@saleor/sdk";
@@ -40,7 +40,7 @@ const Notifications: React.FC = () => {
   const alert = useAlert();
   const intl = useIntl();
 
-  const { updateAvailable } = React.useContext(ServiceWorkerContext);
+  // const { updateAvailable } = React.useContext(ServiceWorkerContext);
 
   // TODO SEM - To review why logic is commented.
   // React.useEffect(() => {
@@ -107,7 +107,7 @@ if (process.env.GTM_ID !== undefined) {
 }
 
 const startApp = async () => {
-  (window as any)['geoInfo'] = await getGeoInformation();
+  (window as any).geoInfo = await getGeoInformation();
   if (sentryDsn !== undefined) {
     Sentry.init({
       dsn: sentryDsn,

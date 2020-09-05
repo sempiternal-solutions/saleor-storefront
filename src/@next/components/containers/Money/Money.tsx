@@ -14,7 +14,9 @@ export const Money: React.FC<IProps> = ({
   React.useEffect(() => {
     async function getCurrency() {
       try {
-        const result = (window as any)['geoInfo'] ? (window as any)['geoInfo'] : await getGeoInformation();
+        const result = (window as any).geoInfo
+          ? (window as any).geoInfo
+          : await getGeoInformation();
         setCurrency(result.currency);
       } catch (error) {
         console.log(error);
@@ -25,7 +27,7 @@ export const Money: React.FC<IProps> = ({
     }
   }, [currency]);
 
-  let userCurrency = supportedCurrency.find((x) => x === currency);
+  let userCurrency = supportedCurrency.find(x => x === currency);
   if (!userCurrency) {
     userCurrency = "USD";
   }

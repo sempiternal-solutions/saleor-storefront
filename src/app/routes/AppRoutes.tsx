@@ -2,7 +2,7 @@ import * as React from "react";
 import { Route, Switch } from "react-router-dom";
 
 import { CartPage, CheckoutPage, PasswordReset, ThankYouPage } from "@pages";
-import { CheckoutLogin /*, NotFound */ } from "../../components";
+import { CheckoutLogin } from "../../components";
 import UserAccount, * as accountPaths from "../../userAccount/routes";
 import { OrderDetails } from "../../userAccount/views";
 import { Account, AccountConfirm } from "../../views/Account";
