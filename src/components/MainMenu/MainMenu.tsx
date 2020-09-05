@@ -23,7 +23,7 @@ import { TypedMainMenuQuery } from "./queries";
 import cartImg from "../../images/cart.svg";
 import hamburgerHoverImg from "../../images/hamburger-hover.svg";
 import hamburgerImg from "../../images/hamburger.svg";
-import logoImg from "../../images/logo.svg";
+// import logoImg from "../../images/logo.svg";
 import searchImg from "../../images/search.svg";
 import userImg from "../../images/user.svg";
 import {
@@ -84,15 +84,22 @@ const MainMenu: React.FC = () => {
                     <Media
                       query={{ minWidth: mediumScreen }}
                       render={() =>
-                        items.map(item => (
-                          <li
-                            data-test="mainMenuItem"
-                            className="main-menu__item"
-                            key={item.id}
-                          >
-                            <NavDropdown overlay={overlayContext} {...item} />
-                          </li>
-                        ))
+                        [
+                          <li data-test="mainMenuItem" className="main-menu__item" key='home'>
+                            <ul className="main-menu__nav-dropdown">
+                              <li><a href="/">Home</a></li>
+                            </ul>
+                          </li>,
+                          items.map(item => (
+                            <li
+                              data-test="mainMenuItem"
+                              className="main-menu__item"
+                              key={item.id}
+                            >
+                              <NavDropdown overlay={overlayContext} {...item} />
+                            </li>
+                          ))
+                        ]
                       }
                     />
                     <Online>
@@ -168,7 +175,8 @@ const MainMenu: React.FC = () => {
 
           <div className="main-menu__center">
             <Link to={appPaths.baseUrl}>
-              <ReactSVG path={logoImg} />
+              {/* <ReactSVG path={logoImg} /> */}
+              <span className='main-menu__logo_text'>CodesForever</span>
             </Link>
           </div>
 

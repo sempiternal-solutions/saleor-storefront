@@ -2,7 +2,7 @@ import * as React from "react";
 import { Route, Switch } from "react-router-dom";
 
 import { CartPage, CheckoutPage, PasswordReset, ThankYouPage } from "@pages";
-import { CheckoutLogin, NotFound } from "../../components";
+import { CheckoutLogin /*, NotFound */ } from "../../components";
 import UserAccount, * as accountPaths from "../../userAccount/routes";
 import { OrderDetails } from "../../userAccount/views";
 import { Account, AccountConfirm } from "../../views/Account";
@@ -35,7 +35,7 @@ export const Routes: React.FC = () => (
     <Route path={paths.passwordResetUrl} component={PasswordReset} />
     <Route path={paths.checkoutUrl} component={CheckoutPage} />
     <Route path={paths.orderFinalizedUrl} component={ThankYouPage} />
-    <Route component={NotFound} />
+    {/* <Route component={NotFound} /> */}
   </Switch>
 );
 

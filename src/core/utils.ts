@@ -172,3 +172,9 @@ export const findFormErrors = (result: void | FetchResult): FormError[] => {
 };
 
 export const removeEmptySpaces = (text: string) => text.replace(/\s+/g, "");
+
+// TODO SEM - Review this logic to prevent delay.
+export const getGeoInformation = async () => {
+  const response = await fetch(`https://ipapi.co/json/`);
+  return await response.json();
+};

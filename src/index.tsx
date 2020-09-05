@@ -30,6 +30,7 @@ import {
   serviceWorkerTimeout,
 } from "./constants";
 import { history } from "./history";
+import { getGeoInformation } from "./core/utils";
 
 const SALEOR_CONFIG: ConfigInput = {
   apiUrl,
@@ -41,29 +42,30 @@ const Notifications: React.FC = () => {
 
   const { updateAvailable } = React.useContext(ServiceWorkerContext);
 
-  React.useEffect(() => {
-    if (updateAvailable) {
-      alert.show(
-        {
-          actionText: intl.formatMessage({ defaultMessage: "Refresh" }),
-          content: intl.formatMessage({
-            defaultMessage:
-              "To update the application to the latest version, please refresh the page!",
-          }),
-          title: intl.formatMessage({
-            defaultMessage: "New version is available!",
-          }),
-        },
-        {
-          onClose: () => {
-            location.reload();
-          },
-          timeout: 0,
-          type: "success",
-        }
-      );
-    }
-  }, [updateAvailable]);
+  // TODO SEM - To review why logic is commented.
+  // React.useEffect(() => {
+  //   if (updateAvailable) {
+  //     alert.show(
+  //       {
+  //         actionText: intl.formatMessage({ defaultMessage: "Refresh" }),
+  //         content: intl.formatMessage({
+  //           defaultMessage:
+  //             "To update the application to the latest version, please refresh the page!",
+  //         }),
+  //         title: intl.formatMessage({
+  //           defaultMessage: "New version is available!",
+  //         }),
+  //       },
+  //       {
+  //         onClose: () => {
+  //           location.reload();
+  //         },
+  //         timeout: 0,
+  //         type: "success",
+  //       }
+  //     );
+  //   }
+  // }, [updateAvailable]);
 
   const { authenticated } = useAuth();
   const [prevAuthenticated, setPrevAuthenticated] = React.useState<
@@ -105,6 +107,7 @@ if (process.env.GTM_ID !== undefined) {
 }
 
 const startApp = async () => {
+  (window as any)['geoInfo'] = await getGeoInformation();
   if (sentryDsn !== undefined) {
     Sentry.init({
       dsn: sentryDsn,

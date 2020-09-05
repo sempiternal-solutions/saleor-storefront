@@ -7,7 +7,9 @@
     background-size: cover;
     background-position: center;
     text-align: center;
-    padding: 12rem 0;
+    padding: 5rem 0;
+    background-image: url("../../../images/cover-bg.jpg");
+    background-blend-mode: overlay;
 
     &-text {
       overflow: hidden;

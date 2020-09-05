@@ -211,7 +211,7 @@
   }
 
   &__nav-dropdown {
-    padding: 0 1.5rem;
+    padding: 0 .7rem;
 
     &--active {
       background-color: $turquoise-light;
@@ -286,5 +286,13 @@
         }
       }
     }
+  }
+  &__logo_text {
+    text-transform: uppercase;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 2rem;
+    line-height: 2rem;
+    padding-top: .3rem;
+    display: inline-block;
   }
 }
