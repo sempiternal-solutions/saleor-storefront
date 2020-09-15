@@ -23,6 +23,48 @@
       width: 100%;
       min-height: $spacer * 10;
       margin-bottom: $spacer * 9; 
+
+      li {
+        list-style: disc;
+        margin-left: 30px;
+        padding:  5px;
+      }
+      
+      blockquote {
+          padding: 15px 5px;
+          padding-left: 20px;
+          font-weight: bold;
+          font-style: italic;
+          font-size: .8em;
+          margin-bottom: 10px;
+          color: #666;
+          border: 1px solid #13bebb;
+          border-left: 10px solid #13bebb;
+      }
+      
+      h1, h2, h3, h4, h5 {
+        font-weight: bold;
+        padding: 2rem 0 1rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+          font-size: 1.5rem;
+      }
+      h3 {
+        font-size: 1.3rem;
+      }
+      h4 {
+        font-size: 1.2rem;
+      }
+      h5 {
+        font-size: 1rem;
+      }
+      
+      p {
+          padding-bottom: .5rem;
+      }
     }
 
     &__info {

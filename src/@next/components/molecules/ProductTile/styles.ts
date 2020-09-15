@@ -30,7 +30,9 @@ export const Title = styled.h4`
 `;
 
 export const Price = styled.p`
+  font-weight: bold;
   ${textProps}
+  font-size: 1.2rem;
 `;
 
 export const Image = styled.div`

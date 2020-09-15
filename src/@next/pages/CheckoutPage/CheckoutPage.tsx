@@ -40,8 +40,8 @@ const prepareCartSummary = (
   items?: IItems
 ) => {
   const products = items?.map(({ id, variant, totalPrice, quantity }) => ({
-    id: id || "",
-    name: variant.name || "",
+    id: id || variant.id || "",
+    name: variant.name || variant.product?.name || "",
     price: {
       gross: {
         amount: totalPrice?.gross.amount || 0,
