@@ -241,7 +241,9 @@ const MainMenu: React.FC = () => {
                             )
                           }
                         >
-                          <span className='login-link-label-desktop'>Login&nbsp;/&nbsp;Register</span>
+                          <span className="login-link-label-desktop">
+                            Login&nbsp;/&nbsp;Register
+                          </span>
                           <ReactSVG path={userImg} />
                         </li>
                       )}
