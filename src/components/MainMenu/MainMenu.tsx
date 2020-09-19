@@ -233,7 +233,7 @@ const MainMenu: React.FC = () => {
                       ) : (
                         <li
                           data-test="desktopMenuLoginOverlayLink"
-                          className="main-menu__icon"
+                          className="main-menu__icon login-lnk-btn"
                           onClick={() =>
                             overlayContext.show(
                               OverlayType.login,
@@ -241,6 +241,7 @@ const MainMenu: React.FC = () => {
                             )
                           }
                         >
+                          <span className='login-link-label-desktop'>Login&nbsp;/&nbsp;Register</span>
                           <ReactSVG path={userImg} />
                         </li>
                       )}
